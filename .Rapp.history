@@ -1,0 +1,41 @@
+help()
+help(installing packages)
+help('installing packages')
+help(‘??installing packages’)
+help(??installing packages)
+??installing packages
+"??installing packages"
+packages()
+installed.packages()
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("dplyr", packages)
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("MASS", packages)
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("lme4", packages)
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("glmmTMB", packages)
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("gamm4", packages)
+install.packages("dplyr", "lme4", "glmmTMB", "gamm4")
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("dplyr", packages)
+a<-installed.packages()#
+packages<-a[,1] #
+is.element("gamm4", packages)
+install.packages("installr")#
+#
+library(installr)#
+#
+updateR()
+install.packages("installr")
+export RSTUDIO_WHICH_R=/usr/local/Cellar/r/4.0.3_2/lib/R/
+n
+source("/Users/Neha/Desktop/github/PM_COVID/Preprocessing.R")
+source("/Users/Neha/Desktop/github/PM_COVID/Preprocessing.R")

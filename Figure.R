@@ -14,7 +14,7 @@ library("lme4")
 us <- map_data('state')
 
 #Plot prevalence of COVID-19
-states <- st_read("./cb_2017_us_county_500k/cb_2017_us_county_500k.shp")
+states <- st_read("/Users/Neha/Desktop/github/PM_COVID/cb_2017_us_county_500k/cb_2017_us_county_500k.shp")
 
 aggregate_pm_census_cdc_test_beds$fips <- str_pad(aggregate_pm_census_cdc_test_beds$fips, 5, pad = "0")
 covid_us <- mutate(aggregate_pm_census_cdc_test_beds,
@@ -132,10 +132,10 @@ p1 <- ggplot(data[1:7, ], aes(x = Methods, y = RR), size = 5) +
   geom_errorbar(aes(ymin = lower_CI, ymax = upper_CI), width = 0.2 , size = 1) +
   geom_hline(yintercept = 1.0, linetype = "dashed", size = 0.8)  +
   annotate(geom = "text", x = seq_len(nrow(data)), y = 1 - 12 / 100, label = data$method, size = 5 * 2) +
-  #annotate(geom = "text", x = c(3), y = 1+21/100, label = c("Entire Medicare Enrollees (2000-2016)"), size = 8) +
-  #annotate(geom = "text", x = c(c(1.5+5 * (0),4+5 * (0))), y = 1-1.75/100, label = c(rep(c("Regression"),1),rep(c("Causal"),1)), size = 8) +
+  annotate(geom = "text", x = c(3), y = 1+21/100, label = c("Entire Medicare Enrollees (2000-2016)"), size = 8) +
+  annotate(geom = "text", x = c(c(1.5+5 * (0),4+5 * (0))), y = 1-1.75/100, label = c(rep(c("Regression"),1),rep(c("Causal"),1)), size = 8) +
   coord_cartesian(ylim = c(0.90, 1.4), xlim = c(0.5, 7.5), expand = FALSE, clip = "off")  +
-  #geom_segment(aes(x = 2.5, y = 1-10/100, xend = 2.5, yend = 1),colour="black") +
+  geom_segment(aes(x = 2.5, y = 1-10/100, xend = 2.5, yend = 1),colour="black") +
   theme_bw() +
   theme(plot.margin = unit(c(3, 2, 4, 1), "lines"),
         axis.title.x = element_blank(),
